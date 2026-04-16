@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+:root {
+  --background: 10 10 12;
+  --foreground: 250 250 250;
+  
+  --card: 20 20 23;
+  --card-foreground: 250 250 250;
+
+  --border: 35 35 40;
+
+  --primary: 255 102 0;
+  --primary-foreground: 255 255 255;
+
+  --success: 0 255 130;
+  --success-foreground: 10 10 12;
+
+  --warning: 255 180 0;
+  --warning-foreground: 10 10 12;
+
+  --danger: 255 50 50;
+  --danger-foreground: 255 255 255;
+  
+  /* Map markers context */
+  --zone-green: 34 197 94;
+  --zone-yellow: 234 179 8;
+  --zone-orange: 249 115 22;
+  --zone-red: 239 68 68;
+}
+
+@theme inline {
+  --color-background: rgb(var(--background));
+  --color-foreground: rgb(var(--foreground));
+  --color-card: rgb(var(--card));
+  --color-card-foreground: rgb(var(--card-foreground));
+  --color-border: rgb(var(--border));
+  
+  --color-primary: rgb(var(--primary));
+  --color-primary-foreground: rgb(var(--primary-foreground));
+  
+  --color-success: rgb(var(--success));
+  --color-success-foreground: rgb(var(--success-foreground));
+  
+  --color-warning: rgb(var(--warning));
+  --color-warning-foreground: rgb(var(--warning-foreground));
+  
+  --color-danger: rgb(var(--danger));
+  --color-danger-foreground: rgb(var(--danger-foreground));
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar for dashboard dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--foreground), 0.2);
+}
+
+/* Utilities */
+@utility glass {
+  background-color: rgba(var(--card), 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(var(--border), 0.5);
+}
